@@ -1,11 +1,9 @@
 require 'spec_helper'
 
-
- 
 describe 'Platform login', type: :feature do
   before do
     user = User.create(email: 'asdf@asdf.com', password: 'asdfasdf')
-    visit '/'    
+    visit '/'
   end
 
   it 'can display the platform homepage' do
@@ -24,8 +22,8 @@ describe 'Platform login', type: :feature do
     end
 
     it 'enables restaurant admin to log in' do
-    end
 
+    end
   end
 end
 

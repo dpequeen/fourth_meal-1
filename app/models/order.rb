@@ -2,14 +2,15 @@ class Order < ActiveRecord::Base
   has_many :order_items
   has_many :items, through: :order_items
   belongs_to :user
+  belongs_to :restaurant
 
   def has_item?(item_id)
-    OrderItem.where(:order_id => self.id, 
+    OrderItem.where(:order_id => self.id,
                     :item_id => item_id).count  >= 1
   end
 
   def existing_item(item_id)
-    OrderItem.where(:order_id => self.id, 
+    OrderItem.where(:order_id => self.id,
                     :item_id => item_id)
   end
 
