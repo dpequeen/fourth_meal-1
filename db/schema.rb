@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20131210015729) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "restaurant_id"
   end
 
   create_table "items", force: true do |t|
@@ -60,26 +59,22 @@ ActiveRecord::Schema.define(version: 20131210015729) do
     t.datetime "updated_at"
   end
 
-  create_table "restaurant_users", force: true do |t|
-    t.integer  "restaurant_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "restaurant_users", ["restaurant_id"], name: "index_restaurant_users_on_restaurant_id", using: :btree
-  add_index "restaurant_users", ["user_id"], name: "index_restaurant_users_on_user_id", using: :btree
-
   create_table "restaurants", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "restaurants_users", force: true do |t|
-    t.integer "user_id"
-    t.integer "restaurant_id"
+  create_table "roles", force: true do |t|
+    t.string   "level"
+    t.integer  "restaurant_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "roles", ["restaurant_id"], name: "index_roles_on_restaurant_id", using: :btree
+  add_index "roles", ["user_id"], name: "index_roles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

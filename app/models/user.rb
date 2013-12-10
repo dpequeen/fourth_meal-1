@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :orders
   has_one :platform_admin
+  has_many :roles
+  has_many :restaurants, through: :roles
 end
