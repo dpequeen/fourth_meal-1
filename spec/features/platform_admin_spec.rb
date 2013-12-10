@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-
- 
 describe 'Platform login', type: :feature do
   before do
     user = User.create(email: 'asdf@asdf.com', password: 'asdfasdf')
+    PlatformAdmin.create(user_id: user.id) 
     visit '/'    
   end
 
