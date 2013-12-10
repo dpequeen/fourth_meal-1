@@ -42,6 +42,8 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'capybara', '~>2.2.0'
+  gem 'pry-debugger'
+  gem 'factory_girl_rails'
 end
 
 group :production do
