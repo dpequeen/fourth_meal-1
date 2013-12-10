@@ -1,4 +1,4 @@
-class RestaurantUser < ActiveRecord::Base
+class RestaurantsUser < ActiveRecord::Base
   belongs_to :restaurant
   belongs_to :user
 end
