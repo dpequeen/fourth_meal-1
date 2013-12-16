@@ -4,6 +4,7 @@ describe 'Login: ' do
   context 'Platform Admin' do
     it 'can log in and out of the platform site' do
       visit '/'
+      # save_and_open_page
       click_on 'Login'
       fill_in 'Email', with: "denvergschool@gmail.com"
       fill_in 'Password', with: "password"

@@ -19,6 +19,43 @@ user = User.create( email: "asdf@asdf.com", password: "asdfasdf")
 user = User.create( email: "qwer@qwer.com", password: "qwerqwer")
 user = User.create( email: "zxcv@zxcv.com", password: "zxcvzxcv")
 
+NUMBER_OF_RESTAURANTS = 10
+NUMBER_OF_REGIONS = 4
+NUMBER_OF_ITEMS = 3
+NUMBER_OF_USERS = 10
+NUMBER_OF_RESTAURANT_ADMINS = 2
+NUMBER_OF_STOCKERS = 2
+NUMBER_OF_PLATFORM_ADMINS = 2
+NUMBER_OF_CATEGORIES = 3
+
+restaurant_count = 0
+category_count = 0
+restaurant_admin_count = 0
+item_count = 0
+
+NUMBER_OF_RESTAURANTS.times do 
+  generated_name = "KFC #{restaurant_count = restaurant_count + 1}"
+  generated_description = "KFC is good"
+  r = Restaurant.create(name: generated_name, description: generated_description)
+  NUMBER_OF_RESTAURANT_ADMINS.times do
+    u = User.create(email: "Bobaaaa#{restaurant_admin_count += 1}@gmail.com", password: "password")
+    Role.create!(restaurant: r, user: user, level: "admin")
+  end
+  NUMBER_OF_STOCKERS.times do
+    u = User.create(email: "Johnaaaa#{restaurant_admin_count += 1}@gmail.com", password: "password")
+    Role.create!(restaurant: r, user: user, level: "stocker")
+  end
+
+  NUMBER_OF_CATEGORIES.times do
+    c = Category.create(name: "category #{category_count += 1}", restaurant: r)
+    NUMBER_OF_ITEMS.times do
+      Item.create({name: "item #{item_count += 1}", description: "Not a Sloppy Joe", price: Random.new.rand(20), image_url: "pp.png", category: c})
+    end
+  end
+end
+
+
+
 { "Billy's BBQ" => "Barbecue restaurant",
   "Moe's Q Shack" => "BBQ shack",
   "Knife & fork" => "Upscale Southern food",
