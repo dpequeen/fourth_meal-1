@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capybara', '~>2.2.0'
   gem 'pry-debugger'
   gem 'factory_girl_rails'
+  gem 'simplecov'  
 end
 
 group :production do
