@@ -5,3 +5,11 @@ OrderUp is a platform that facilitates online ordering for restaurants.
 We used PostgreSQL for the database, Stripe for payments, and Devise for authentication.
 
 The website can be viewed at orderup.herokuapp.com
+
+----------------------------------------------------------------------------------------
+
+Project // TEST-it!
+
+
+
+
